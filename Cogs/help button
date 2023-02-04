@@ -1,0 +1,126 @@
+"""
+        member = ctx.author
+        if member.dm_channel:
+            msg = await member.dm_channel.send(
+                embed=hilfe,
+                components=[
+                    [Button(style=ButtonStyle.gray, label="!Befehle"),
+                     Button(style=ButtonStyle.gray, label="!Team"),
+                     Button(style=ButtonStyle.gray, label="!Level")],
+                    [Button(style=ButtonStyle.blue, label="Report"),
+                     Button(style=ButtonStyle.gray, label="Regeln")],
+                    [Button(style=ButtonStyle.red, label="Ende")]
+                ],
+            )
+
+            def check(rea):
+                return ctx.author == rea.user and rea.channel == member.dm_channel
+
+            while active:
+                res = await bot.wait_for("button_click", timeout=None, check=check)
+                await res.defer()
+
+                if res.component.label == "!Befehle":
+                    print("Befehle")
+                    await res.respond(type=6)
+                    await msg.edit(
+                        embed=hilfe
+                    )
+                if res.component.label == "!Team":
+                    print("Team")
+                    await res.respond(type=6)
+                    await msg.edit(
+                        embed=team,
+                    )
+                if res.component.label == "!Level":
+                    print("Level")
+                    await res.respond(type=6)
+                    await msg.edit(
+                        embed=level
+                    )
+                if res.component.label == "Report":
+                    print("Report")
+                    await res.respond(type=6)
+                    await msg.edit(
+                        embed=report
+                    )
+                if res.component.label == "Regeln":
+                    print("Regeln")
+                    await res.respond(type=6)
+                    await msg.edit(
+                        embed=rule
+                    )
+                if res.component.label == "Ende":
+                    print("Ende")
+                    await res.respond(type=6)
+                    await msg.edit(embed=Ende)
+                    await asyncio.sleep(5)
+                    await msg.delete()
+                    active = False
+                print(active)
+                await asyncio.sleep(60*10)
+                await msg.delete()
+
+        if not member.dm_channel:
+            await member.create_dm()
+            msgs = await member.dm_channel.send(
+                embed=hilfe,
+                components=[
+                    [Button(style=ButtonStyle.gray, label="!Befehle"),
+                     Button(style=ButtonStyle.gray, label="!Team"),
+                     Button(style=ButtonStyle.gray, label="!Level")],
+                    [Button(style=ButtonStyle.blue, label="Report"),
+                     Button(style=ButtonStyle.gray, label="Regeln")],
+                    [Button(style=ButtonStyle.red, label="Ende")]
+                ],
+            )
+
+            def check(red):
+                return ctx.author == red.user and red.channel == member.dm_channel
+
+            actives = True
+            while actives:
+                resd = await bot.wait_for("button_click", timeout=None, check=check)
+                await resd.defer()
+
+                if resd.component.label == "!Befehle":
+                    print("Befehle")
+                    await resd.respond(type=6)
+                    await msgs.edit(
+                        embed=hilfe
+                    )
+                if resd.component.label == "!Team":
+                    print("Team")
+                    await resd.respond(type=6)
+                    await msgs.edit(
+                        embed=team,
+                    )
+                if resd.component.label == "!Level":
+                    print("Level")
+                    await resd.respond(type=6)
+                    await msgs.edit(
+                        embed=level
+                    )
+                if resd.component.label == "Report":
+                    print("Report")
+                    await resd.respond(type=6)
+                    await msgs.edit(
+                        embed=report
+                    )
+                if resd.component.label == "Regeln":
+                    print("Regeln")
+                    await resd.respond(type=6)
+                    await msgs.edit(
+                        embed=rule
+                    )
+                if resd.component.label == "Ende":
+                    print("Ende")
+                    await resd.respond(type=6)
+                    await msgs.edit(embed=Ende)
+                    await asyncio.sleep(5)
+                    await msgs.delete()
+                    actives = False
+                print(actives)
+                await asyncio.sleep(60 * 10)
+                await msgs.delete()
+"""

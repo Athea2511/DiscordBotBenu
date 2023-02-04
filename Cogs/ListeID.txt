@@ -1,0 +1,46 @@
+from discord.ext import commands
+
+
+class IDs(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print("Modul: IDs geladen!")
+
+
+# Channel
+Music_channel_id = 502565933232029739
+Rules_channel_id = 746088308060455073
+Music_commands_id = 502844598478045205
+Bot_sends_id = 1011242514679869480
+lvl_channel_id = 1011243186003386459
+All_member = 1013840981474426920
+# Channel
+
+# Group, Guilds, Message, Client
+Music_group_id = 502565205910224896
+Server_Guild_id = 497869824089784341
+Regel_message_id = 753329430889365665
+Bot_Client_id = 745737300318879884
+# Group, Guilds, Message, Client
+
+# Roles
+BotMod_role_id = 500971900571484160
+Moderator_role_id = 500969511546126336
+Asche_role_id = 501057784993808392
+Rainbow_role_id = 746463354968735774
+Verified_role_id = 747914905100877976
+Fawkes_role_id = 501058996992606209
+Senior_Phoenix_role_id = 501058697615769619
+Phoenix_on_Fire_role_id = 501060105828302849
+Junger_Phoenix_role_id = 501058398918279168
+Admin_role_id = 500969288245444609
+Owner_role_id = 501736228127899679
+# Roles
+Token = "NzQ1NzM3MzAwMzE4ODc5ODg0.GCTFeF.u04SAacG3idmEkrIwZW0iCTXPO3TKR_e56OkbU"
+
+
+def setup(client):
+    client.add_cog(IDs(client))
